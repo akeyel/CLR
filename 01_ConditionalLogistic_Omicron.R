@@ -31,12 +31,15 @@ View(in.data)
 # 2022-05-16 Get lineage summary for manuscript
 # Restrict to Omicron emergence period
 oep = in.data[in.data$DATE_INDEX >= 332 & in.data$DATE_INDEX <= 389, ]
+nrow(oep[oep$IS_FOCAL == 1, ])
+nrow(oep[oep$IS_FOCAL == 0, ])
 
 # Restrict to Delta emergence period
 dep = in.data[in.data$DATE_INDEX >= 78 & in.data$DATE_INDEX <= 227, ]
 table(dep$sequence_result) # Except this includes EVERYTHING. How do we reduce it appropriately?
 dep.t = table(dep$sequence_result)
 non.delta= sum(dep.t[45:96]) - dep.t[[78]]
+delta = sum(dep.t) - non.delta
 perc.alpha = (dep.t[54] + dep.t[94]) / non.delta # Q is also Alpha
 perc.iota = dep.t[71] / non.delta
 perc.gamma = sum(dep.t[87:93]) /non.delta

@@ -1,7 +1,7 @@
 # Goal: Analyze Omicron data using the case-control approach used for Delta and VOC's
 
 # Created 2021-12-15
-# Updated 2022-03-22
+# Updated 2022-06-17
 
 # Author: Alexander "Sasha" Keyel <alexander.keyel@health.ny.gov
 
